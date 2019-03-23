@@ -1,0 +1,13 @@
+html
+tags del html input-h1-p checkbox etc
+
+poner el mismo tag name a los input radio para seleccionar uno solo
+form method/action get post
+
+javascript
+
+window.onload = funcionsinparentesis;
+
+function funcionsinparentesis(){
+    
+}
