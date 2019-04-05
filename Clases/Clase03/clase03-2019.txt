@@ -1,0 +1,9 @@
+No vine a a la clase dos.
+
+Clase 3:
+
+La conocida grilla de listado de personas:
+
+Nombre              Apellido            Accion (solo borrar)
+
+Y un form donde poder agregar otro usuario a la lista
