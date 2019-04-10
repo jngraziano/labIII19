@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <!-- https://www.base64-image.de/ -->
-
+       
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PPedit</title>
+    <title>tablaDinamica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/estilos.css" />
@@ -17,28 +16,9 @@
     <script src="./ts/app.js"></script>
 
 
-     
-
 </head>
 <body style=" background-color: grey;">
-        <!-- <nav class="nav nav-tabs mt-2">
-                
-
-                        <div class="navbar-header">
-                          <a class="navbar-brand" href="#">Listado de personas</a>
-                        </div>
-
-                        
-                        <ul >
-                          <li class="active"><a href="#">Home</a></li>
-                          <li><a class="nav-link" href="#">Page 1</a></li>
-                          <li><a class="nav-link" href="#">Page 2</a></li>
-                          <li><a class="nav-link" href="#">Page 3</a></li>
-                        </ul>
-                      
-                
-              </nav> -->
-
+      
               <!-- NAV -->
               <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                     <div class="container-fluid">
@@ -47,11 +27,7 @@
                             <a class="navbar-brand" href="#">Listado de personas</a>
                     </div>
                                               
-                    <button class="btn btn-outline-success">Agregar usuario</button>
-                    <!-- <a class="nav-link active" href="#">Opción 2</a> -->
-                    <!-- <a class="nav-link" href="#">Opción 3</a> -->
-                    <!-- <a class="nav-link" href="#">Opción 4</a> -->
-                   
+                    <button id="btnAgregar" class="btn btn-outline-success">Agregar usuario</button>                  
                   </nav>
                 </div>
               <br>
@@ -118,8 +94,9 @@
 
       <form action="">
         <!-- DIV OCULTO 2 (AGREGAR) -->
-        <!-- <div class="divOculto" id="divOculto2" hidden> -->
-          <div class="form-group" id="divOculto2" hidden>
+        <div class="divOculto" id="divOculto2">
+          <!-- <div class="form-group" id="divOculto2"> -->
+      
 
             <!-- BUTTON X para ocultar el formulario -->
             <button class="btnCerrar" id="btnCerrar2">X</button>

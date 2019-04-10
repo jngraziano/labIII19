@@ -103,23 +103,109 @@ $(document).ready(function () {
             // }
         }); //fin td.dblclick
         $("#btnAgregar").click(function () {
-            $("#divOculto2").show(1000);
+            //    $("#divOculto2").show(1000);
+            $("#divOculto2").css("visibility", "visible");
         });
         $("#btnAgregarConfirm").click(function () {
             agregarPersona();
         });
-        $("#btnModificar").click(function () {
-            modificarPersona();
-        });
-        $("#btnEliminar").click(function () {
-            eliminarPersona();
-        });
-        $("input").change(function () {
-            imgPOST();
-        });
+        // $("#btnModificar").click(function () { 
+        //    modificarPersona();
+        // });
+        // $("#btnEliminar").click(function () { 
+        //     eliminarPersona();
+        // });
+        // $("input").change(function () { 
+        //     imgPOST();
+        // });
     }); //fin .get
 }); //fin document.ready
 function muestroDivconClick() {
+}
+function agregarPersona() {
+    var flag = true;
+    var nombreNuevo = $("#nombreA").val().text;
+    var apellidoNuevo = $("#apellidoA").val();
+    var fechaNueva = $("#fechaA").val();
+    var fechaHOY = new Date();
+    var sexoNuevo;
+    // VALIDO QUE AMBOS CAMPOS TENGAN MAS DE 3 CARACTERES y no vacio
+    if (nombreNuevo.length < 3 || nombreNuevo == "") {
+        //    $("#nombreA").addClass("ValidaError");
+        $("#nombreA").attr('class', 'ValidaBorderColorError');
+        flag = false;
+    }
+    else {
+        // $("#nombreA").addClass("ValidaCorrecto");
+        $("#nombreA").attr('class', "ValidaBorderCorrecto");
+    }
+    if (apellidoNuevo.length < 3 || apellidoNuevo == "") {
+        // $("#apellidoA").addClass("ValidaError");
+        $("#apellidoA").attr('class', "ValidaBorderColorError");
+        flag = false;
+    }
+    else {
+        // $("#apellidoA").addClass("ValidaCorrecto");
+        $("#apellidoA").attr('class', "ValidaBorderCorrecto");
+    }
+    //VALIDO FECHA
+    var fechaSplit = fechaNueva.split("-");
+    var fechaValidada = new Date(fechaSplit[0], fechaSplit[1] - 1, fechaSplit[2], 0, 0, 0, 0);
+    var fechaPost = fechaValidada.getFullYear() + "-" + ("0" + (fechaValidada.getMonth() + 1)).slice(-2) + "-" + ("0" + (fechaValidada.getDay() + 1)).slice(-2);
+    if (fechaNueva == "" || fechaValidada.getTime() > fechaHOY.getTime()) {
+        // document.getElementById("PfechaA").className = "ValidaTextColorError";
+        $("#PfechaA").attr('class', "ValidaBorderColorError");
+        flag = false;
+    }
+    else {
+        $("#PfechaA").attr('class', "ValidaTextColorCorrecto");
+    }
+    //VALIDO QUE SELECCIONEN UNO DE LOS DOS SEXOS
+    var radMasculino = $("#radMasculinoA").prop("checked");
+    var radFemenino = $("#radFemeninoA").prop("checked");
+    // (document.getElementById("radMasculinoA").checked == false && document.getElementById("radFemeninoA").checked == false )
+    if (radMasculino && radFemenino) {
+        flag = false;
+        $("#radMasculinoA").prop("checked", false);
+        $("#radFemeninoA").prop("checked", false);
+        // document.getElementById("labelSexoA").className = "ValidaTextColorError";
+        $("#labelSexoA").attr('class', "ValidaTextColorError");
+    }
+    else if (radFemenino) {
+        sexoNuevo = "Female";
+    }
+    else {
+        sexoNuevo = "Male";
+    }
+    //BASE64
+    // var imgPost;
+    // var input = document.getElementById("inputImgA");
+    // $("#imgMuestro").attr(function () { 
+    // if(input.files && input.files[0]){
+    // var fReader = new FileReader();
+    // console.log(fReader);
+    // fReader.addEventListener("load", function (e) {
+    // console.log(e.target.result);//es lo mismo que setatribbiut
+    // $("#imagen").attr("src",e.target.result);
+    //si se lo paso directamente al src de un tag img levanta la imagen, por eso uso attr
+    // imgPost = e.target.result;
+    // })
+    // fReader.readAsDataURL(input.files[0]);
+    // }
+    // });
+    if (flag == true) {
+        var spinner = document.getElementById("spinner");
+        spinner.style.display = "block";
+        $.post("http://localhost:3000/nueva", {
+            nombre: nombreNuevo,
+            apellido: apellidoNuevo,
+            sexo: sexoNuevo,
+            fecha: fechaPost
+            // avatar: imgPost
+        }, function (data, status, jqXHR) {
+            transicionSpinner();
+        });
+    }
 }
 function transicionSpinner() {
     // document.getElementById("spinner").style.display = "block";

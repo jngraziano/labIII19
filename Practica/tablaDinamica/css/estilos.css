@@ -45,6 +45,7 @@ html {
   }
 
   .divOculto,.divOculto2{
+    visibility: hidden;
     position: fixed;
     bottom:20%;
     right:40%;
