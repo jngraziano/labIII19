@@ -1,0 +1,31 @@
+AJAX ppt
+
+XMLHttpRequest xml = new 
+xml.open ("GET","http://localhost:3000/login", true);
+xml.onreadystatechange = callback
+(viejo)
+
+addeventlistener("click",enviarget);
+
+xml.setRequestHeader
+
+
+JSON ppt
+JSON.parse
+
+Para la proxima clase, hacer la grilla con el index.js. La api se llama api json
+Vamos a ver css
+javascript componentes ??
+
+
+
+PRIMER PARCIAL SIN JQUERY -- IMPORTANTE
+Ejemplo de esto --> apiPractica
+C:/Users/granate/Desktop/tano/falsacultad/labIII18/Practica/apiPractica
+
+Fecha parcial:
+10 de mayo
+Clase que viene es el 26/04:
+json
+3 de mayo:
+modelo de parcial
