@@ -1,0 +1,11 @@
+Vimos:
+
+parrafo => getelementby ID
+
+var nuevoNodoTexto = document.createTextNode("texto");
+parrafo.appendChild(nuevoNodoTexto);
+
+document.createElement("li");
+
+
+primerElemento.parentNode.removeChild(primerElemento);
