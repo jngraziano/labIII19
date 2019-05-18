@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <!-- https://www.base64-image.de/ -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/estilos.css" />
+
+    
+    <!-- SCRIPTS -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="js/funciones.js"></script>   
+     
+
+</head>
+<body>
+        
+    <div id="divTotal">
+    <div id="divListado" class="container">
+        <h2>  Listado Personas</h2>
+        <button class="btnVerde" id="btnAgregar">Agregar Persona</button>
+
+        <!-- TABLA COMPLETA -->
+        <div id="listadoPersonas"  style="overflow-x:auto;">
+            <table  id="tabla">
+                <thead>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>FECHA</th>
+                    <th>SEXO</th>
+                    <th>AVATAR</th>
+                </thead>
+                <tbody id="tCuerpo">
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- DIV OCULTO 1 (MODIFICAR/ELIMINAR) -->
+        <div class="divOculto" id="divOculto" hidden>
+                <!-- BUTTON X para ocultar el formulario -->
+            <button class="btnCerrar" id="btnCerrar">X</button>
+              
+            <div>
+                <!-- INPUT Nombre -->
+                
+                <p>Nombre:</p>
+                <input type="text" id="nombreE" placeholder="Ingrese Nombre..." style="text-align:center">
+                <br><br>
+                <!-- INPUT Apellido -->
+                <p >Apellido:</p>
+                <input type="text" id="apellidoE" placeholder="Ingrese Apellido..."style="text-align:center">
+                <br><br>
+                <!-- INPUT Fecha -->
+                <p id="PfechaE">Fecha:</p>
+                <input type="date" id="fechaE" style="text-align:center">
+                <br><br>
+                
+                <!-- SELECT SEXO-->
+               <label id=labelSexoE for="txtSexo">Sexo:</label><br>
+               <input type="radio" class="radioC" name="radFemenino" id="radFemeninoE">Femenino<br>
+               <input type="radio" class="radioC" name="radMasculino" id="radMasculinoE">Masculino<br>
+            
+                <br>
+                <p id="Pfile">Modificar avatar:</p>
+                <input type="file" id="inputImgE" accept="image/*" required>
+                <br><br>
+                
+                <button class="btnVerde" id="btnModificar">Modificar</button>
+                <button class="botonEliminar" id="btnEliminar">Eliminar</button>
+            </div>
+        </div>
+
+        <!-- DIV OCULTO 2 (AGREGAR) -->
+        <div class="divOculto" id="divOculto2" hidden>
+            <!-- BUTTON X para ocultar el formulario -->
+           <button class="btnCerrar" id="btnCerrar2">X</button>
+          
+           <div id="formulario">
+               <!-- INPUT Nombre -->
+               
+               <p id="Pnombre">Nombre:</p>
+               <input type="text" id="nombreA" placeholder="Ingrese Nombre..."style="text-align:center">
+               <br><br>
+               <!-- INPUT Apellido -->
+               <p id="Papellido">Apellido:</p>
+               <input type="text" id="apellidoA" placeholder="Ingrese Apellido..."style="text-align:center">
+               <br><br>
+               <!-- INPUT Fecha -->
+               <p id="PfechaA">Fecha:</p>
+               <input type="date" id="fechaA" style="text-align:center">
+               <br><br>
+               
+               <!-- SELECT SEXO-->
+               <label id=labelSexoA for="txtSexo">Sexo:</label><br>
+               <input type="radio" class="radioC" name="radFemenino" id="radFemeninoA">Femenino<br>
+               <input type="radio" class="radioC" name="radMasculino" id="radMasculinoA">Masculino<br>
+           
+               <br>
+               <!-- <p id="Pfile">Ingrese avatar:</p>
+               <input type="file" id="inputImgA" accept="image/*" required> -->
+               <br><br>
+
+               <button class="btnVerde" id="btnAgregarConfirm">Agregar 
+                  
+               </button>
+              
+            </div>
+        </div>
+
+        <!-- SPINNER -->
+        <div class="spinner" id="spinner" style="display: none">
+            <!-- <img src="./file/45.gif" alt=""> -->
+            <!-- <img class="spinner" src="https://btcspinner.io/img/spinners/default.png" alt=""> -->
+        </div>
+              
+
+    </div>
+    <!-- <div class="login" id="loginWindow">
+
+            <label for="user">Usuario</label> <br>
+            <input type="text" id="user" placeholder="usuario"> <br>
+    <br>
+            <label for="pasw">Contraseña</label> <br>
+            <input type="password" id="pasw" placeholder="1234"> <br>
+             <br>
+            <input type="submit" value="Log in" class="guardar" id="submit_login">
+        </div>
+     -->
+    </div>
+    <!-- DIV TOTAL -->
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+       
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>tablaDinamica</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/estilos.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+    <!-- SCRIPTS -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script src="./js/funciones.js"></script>
+
+
+</head>
+<body style=" background-color: grey;">
+      
+              <!-- NAV -->
+              <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                    <div class="container-fluid">
+
+                    <div class="navbar-header" id="navHeader">
+                            <a class="navbar-brand" href="#">Listado de personas</a>
+                    </div>
+                                              
+                    <button id="btnAgregar" class="btn btn-outline-success">Agregar usuario</button>                  
+                  </nav>
+                </div>
+              <br>
+
+              
+    <div class="container">
+            
+        <div id="divTable">
+        <table class="table  table-striped table-dark table-bordered table-hover" id="tablaID">
+                <thead>
+                  <tr>
+                    <th  scope="col">NOMBRE</th>
+                    <th  scope="col">APELLIDO</th>
+                    <th  scope="col">FECHA</th>
+                    <th  scope="col">SEXO</th>
+                    <th  scope="col">AVATAR</th>
+                  </tr>
+                </thead>
+
+
+                <tbody id="tBodyTable">
+                 
+                </tbody>
+              </table>
+        </div>
+            
+
+        <!-- DIV OCULTO 1 (MODIFICAR/ELIMINAR) -->
+        <form action="">
+        <div class="d-none divOculto" id="divOculto1" hidden>
+        <!-- BUTTON X para ocultar el formulario -->
+        <button class="btnCerrar" id="btnCerrar">X</button>
+        
+          
+          <!-- INPUT Nombre -->
+          
+          <p>Nombre:</p>
+          <input type="text" id="nombreE" placeholder="Ingrese Nombre..." style="text-align:center">
+          <br><br>
+          <!-- INPUT Apellido -->
+          <p >Apellido:</p>
+          <input type="text" id="apellidoE" placeholder="Ingrese Apellido..."style="text-align:center">
+          <br><br>
+          <!-- INPUT Fecha -->
+          <p id="PfechaE">Fecha:</p>
+          <input type="date" id="fechaE" style="text-align:center">
+          <br><br>
+          
+          <!-- SELECT SEXO-->
+          <label id=labelSexoE for="txtSexo">Sexo:</label><br>
+          <input type="radio" class="radioC" name="radFemenino" id="radFemeninoE">Femenino<br>
+          <input type="radio" class="radioC" name="radMasculino" id="radMasculinoE">Masculino<br>
+      
+          <br>
+          <p id="Pfile">Modificar avatar:</p>
+          <input type="file" id="inputImgE" accept="image/*" required>
+          <br><br>
+          
+          <button class="btnVerde" id="btnModificar">Modificar</button>
+          <button class="botonEliminar" id="btnEliminar">Eliminar</button>
+          
+        </div>
+      </form>
+
+      <form action="">
+        <!-- DIV OCULTO 2 (AGREGAR) -->
+        <div class="divOculto" id="divOculto2">
+          <!-- <div class="form-group" id="divOculto2"> -->
+      
+
+            <!-- BUTTON X para ocultar el formulario -->
+            <button class="btnCerrar" id="btnCerrar2">X</button>
+        
+              
+            <!-- INPUT Nombre -->
+            
+            <p id="Pnombre">Nombre:</p>
+            <input type="text" id="nombreA" placeholder="Ingrese Nombre..."style="text-align:center">
+            <br><br>
+            <!-- INPUT Apellido -->
+            <p id="Papellido">Apellido:</p>
+            <input type="text" id="apellidoA" placeholder="Ingrese Apellido..."style="text-align:center">
+            <br><br>
+            <!-- INPUT Fecha -->
+            <p id="PfechaA">Fecha:</p>
+            <input type="date" id="fechaA" style="text-align:center">
+            <br><br>
+            
+            <!-- SELECT SEXO-->
+            <label id=labelSexoA for="txtSexo">Sexo:</label><br>
+            <input type="radio" class="radioC" name="radFemenino" id="radFemeninoA">Femenino<br>
+            <input type="radio" class="radioC" name="radMasculino" id="radMasculinoA">Masculino<br>
+        
+            <br>
+            <!-- <p id="Pfile">Ingrese avatar:</p>
+            <input type="file" id="inputImgA" accept="image/*" required> -->
+            <br><br>
+
+            <button class="btnVerde" id="btnAgregarConfirm">Agregar 
+                
+            </button>
+        
+          </div>
+        <!-- </div> -->
+      </form>
+        <!-- SPINNER -->
+        <div class="spinner" id="spinner" style="display: none">
+                <!-- <img src="./file/45.gif" alt=""> -->
+                <!-- <img class="spinner" src="https://btcspinner.io/img/spinners/default.png" alt=""> -->
+        </div>
+
+        <div id="divPresentacion" style="visibility:hidden">
+            <h1>Listado de personas</h1><br>
+            <p>Bienvenido. Recuerde que puede agregar/modificar/eliminar una persona. <br>
+            Para cambiar su avatar solo haz click en la imagen.
+            </p>
+        </div>
+        </div>
+
+        
+</body>
+</html>

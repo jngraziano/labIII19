@@ -1,0 +1,6 @@
+jquery:
+
+NO ENTRA BOOSTRAP
+
+
+$(:tipo") devuelve todos los tipos ej todos los input tipo text

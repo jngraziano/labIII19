@@ -35,7 +35,7 @@ function logueo(){
         //verifico que sea 200 el status que es el correcto
             // if (xml.status === 200) {
 
-    xml.open("POST", "http://localhost:1337/login", true);
+    xml.open("POST", "http://localhost:3000/login", true);
     xml.onreadystatechange = callBackPOST;
   
 
