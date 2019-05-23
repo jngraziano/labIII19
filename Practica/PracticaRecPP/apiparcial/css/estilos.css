@@ -1,0 +1,204 @@
+html {
+    font-family: 'Trebuchet MS';
+    /* font-family: 'Arial'; */
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        font-style: oblique;
+        background-color: black;
+        
+  }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    
+}
+input{
+  border-radius: 50px;
+}
+th{
+  background-color: rgb(217, 239, 248);
+}
+
+th, td {
+    text-align: left;
+    padding: 3px;
+   
+}
+img{
+  border-radius: 200px;
+}
+tr{
+  background-color: white;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+h2{
+  
+  height: 20%;
+  width: 15%;
+  border-radius: 200px;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition-duration: 0.4s;
+}
+h2:hover{
+  background-color: darkblue;
+  color: white;
+}
+
+
+.btnCerrar{
+float: right;
+right:-15px; 
+top:-40px; 
+
+
+}
+  .login{
+    position: fixed;
+    background-color: rgb(130, 135, 141);
+    margin: 2%;
+    padding: 2%;
+    border-radius:10px;
+    box-shadow: 5px  5px 0px #424242; 
+    border:2px solid #000;
+    top: 50%;
+    left: 50%;
+    width:170px;
+    height:120px;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -8em; /*set to a negative number 1/2 of your width*/
+    /* border: 1px solid #ccc;
+    background-color: #f3f3f3; */
+  }
+
+  .divOculto,.divOculto2{
+    position: fixed;
+    bottom:20%;
+    right:40%;
+    height: 70%;
+    text-align: center;
+    margin: 2%;
+    background-color:  rgb(217, 239, 248);
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .btnCerrar,.btnCerrar2{
+    color: white;
+    background-color: red;
+    position: absolute; 
+    bottom: 93%; 
+    right: 0%;
+    border-radius:10px;
+    width: 20%;
+    height: 20px;
+  }
+  .btnVerde {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 100px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    transition-duration: 0.4s;
+  }
+ 
+  .btnVerde:hover{
+    background-color: green;
+    color: white;
+  }
+  #btnAgregarConfirm,#btnModificar{
+    position:initial;
+  }
+  #submit_login{
+    /* position: absolute; */
+    right: 10px;
+    top: 5px;
+    width: 150px;
+    height: 30px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  #submit_login:hover{
+    background-color: blue;
+    color: white;
+  }
+  .botonEliminar{
+    border-radius: 12px;
+    background-color: white;
+    width: 100px;
+    height: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  .botonEliminar:hover{
+    background-color: red;
+    color: black;
+    
+  }
+
+  #formulario{
+    text-align: center;
+  }
+
+  .spinner{
+   /* background-color: #424242;
+    display: none;
+     width: 150px;
+    height: 150px;
+   */
+   
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .claseFondo{
+    height: 500px;
+    max-width: 100%;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+  .ValidaBorderColorError{
+    /* border-color: red; */
+    border: 3px solid red
+  }
+  .ValidaBorderCorrecto{
+    /* border-color: green; */
+    border: 3px solid green;
+  }
+
+  .ValidaTextColorError{
+    color: red;
+  }
+  .ValidaTextColorCorrecto{
+    color: green;
+  }
