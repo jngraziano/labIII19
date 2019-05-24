@@ -152,19 +152,19 @@ $(document).ready(function () {
     // $("img").on("click", function () {
 
     // $(".radioC").click(function () {
-        $(".radioC").on("click", function () {
+        $("#radNocheE,#radNocheA").on("click", function () {
 
-        var flag = false;
+            $("#radMananaE,#radMananaA").prop("checked",false);
 
-        if ($("#radNocheE").prop("checked")) {
-            // $("#radNocheE").prop("checked",false);
-            $("#radMananaE").prop("checked",false);
-          
-        }
-        else{
-            $("#radMananaE").prop("checked",true);
+        });
 
-        }
+        $("#radMananaE,#radMananaA").on("click", function () {
+
+            $("#radNocheE,#radNocheA").prop("checked",false);
+
+        });
+
+
 
 
         // if ($("#radNocheE").prop("checked") || $("#radNocheA").prop("checked")) {
@@ -178,7 +178,7 @@ $(document).ready(function () {
         //     $("#radNocheA").prop("checked",false);
         // }
         
-    });
+
        
 
     $(".btnCerrar").click(function () {
