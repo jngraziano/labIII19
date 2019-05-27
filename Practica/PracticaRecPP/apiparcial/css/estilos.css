@@ -11,9 +11,13 @@ html {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+  
     width: 100%;
     border: 1px solid #ddd;
     
+}
+#listadoPersonas{
+  border-radius: 14px;
 }
 input{
   border-radius: 50px;
@@ -40,6 +44,7 @@ h2{
   
   height: 20%;
   width: 15%;
+  text-align: center;
   border-radius: 200px;
   background-color: white;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -99,6 +104,8 @@ top:-40px;
     height: 20px;
   }
   .btnVerde {
+    font-family: 'Trebuchet MS';
+
     position: absolute;
     right: 10px;
     top: 5px;
@@ -117,6 +124,8 @@ top:-40px;
   }
   #btnAgregarConfirm,#btnModificar{
     position:initial;
+    font-family: 'Trebuchet MS';
+
   }
   #submit_login{
     /* position: absolute; */
@@ -135,6 +144,8 @@ top:-40px;
     color: white;
   }
   .botonEliminar{
+    font-family: 'Trebuchet MS';
+
     border-radius: 12px;
     background-color: white;
     width: 100px;

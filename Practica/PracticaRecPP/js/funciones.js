@@ -28,7 +28,7 @@ $(document).ready(function () {
                                           "<td>" +      personasCompleto[i].fecha    + "</td>" +
                                           "<td>" +      personasCompleto[i].sexo     + "</td>"+
                                           "<td>" + "<img src='"+ personasCompleto[i].foto + "'id='imgMuestro' height='80'>"+
-                                          "<input type='file' "+" hidden>"+"</td>"+
+                                          "<input type='file' id='inputhidden'"+" hidden>"+"</td>"+
 
                                     
                                          
@@ -46,13 +46,16 @@ $(document).ready(function () {
                     var target = event.target;
 
                     
-                   if(target.nextSibling.hidden == true)
-                   {
-                       $(target.nextSibling).toggle();
-                   }
-                   else{
-                    $(target.nextSibling).toggle();
-                   }               
+                //    if(target.nextSibling.hidden == true)
+                //    {
+                //        $(target.nextSibling).toggle();
+                //    }
+                //    else{
+                //     $(target.nextSibling).toggle();
+                //    }      
+                
+                
+                $( "img" ).siblings( "#inputhidden" ).toggle();
  
                       
                   });
@@ -184,7 +187,7 @@ $(document).ready(function () {
 
   
 
-//#region Como muestro la tabla 
+
 
 function loginAccesso() {
     document.getElementById("loginWindow").style.visibility = "hidden";
@@ -209,7 +212,6 @@ function loginAccesso() {
 }
 
 
-//#endregion
 
 //#region Mostrar y Ocultar div
 
