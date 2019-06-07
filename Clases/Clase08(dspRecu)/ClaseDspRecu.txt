@@ -1,0 +1,32 @@
+ClaseDspRecu
+
+TS
+
+let num = [1,2,3,4,5]
+map: le paso una funcion por cada uno de los elementos. Devuelve un array con la misma cantidad de elementos, pero modificamos el valor.
+var n = nums.map(
+function (num){
+	return num*num;
+
+)}};
+
+filter: sirve para tener una nueva lista filtrada por la condicion que le ponga. devuelve un array con menos cantidad de elementos.
+var n = nums.filter(funcion(num){
+	return num>3;
+}
+
+reduce: le pasa dos parametros una funcion y un valor 
+
+var n = nums.reduce(function(total,num){
+	return total+=num;
+}
+
+
+Vimos el ejemplo con las funciones. Aca ya lo tengo echo:
+https://github.com/jngraziano/labIII2018/tree/master/Clases/ClaseMAPREDFIL/Ejemplo%20Map%20Reduce%20y%20filter
+
+
+bootstrap
+usar --save al instalar con npm para que lo agregue en el packetjson
+las grillas
+
