@@ -16,3 +16,6 @@ INTRODUCCION A TYPESCRIPT -> se TRANSPILA a JAVASCRIPT (js) CTRL+Ñ
     TRADUCTOR PARA QUE TYPESCRIPT ENTIENDA JQUERY
         npm install @types/jquery
     EN CADA ARCHIVO TS QUE USE JQUERY, HAY QUE REFERENCIAR AL ARCHIVO DE DEFINICION
+
+Mas info en:
+https://github.com/lnpollola/LABO3-2017/blob/master/Clase08/teoria.txt
