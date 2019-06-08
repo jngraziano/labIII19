@@ -1,0 +1,18 @@
+INTRODUCCION A TYPESCRIPT -> se TRANSPILA a JAVASCRIPT (js) CTRL+Ñ
+    PARA INSTALARLO CON NODE
+        npm install -g typescript
+        iniciar proyecto
+            tsc -init
+        hacer un JS (transpilar)
+             tsc app
+        para el watch -> transpilacion en vivo
+            tsc -w
+            tsc -watch
+
+    COMO AGREGAR JQUERY (FRAMEWORK DE JAVASCRIPT)
+        AGREGAR LIBRERIA JQUERY
+            npm install jquery
+            esto debería crear el nodemoludes pero no me anduvo
+    TRADUCTOR PARA QUE TYPESCRIPT ENTIENDA JQUERY
+        npm install @types/jquery
+    EN CADA ARCHIVO TS QUE USE JQUERY, HAY QUE REFERENCIAR AL ARCHIVO DE DEFINICION

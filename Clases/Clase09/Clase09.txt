@@ -1,0 +1,19 @@
+SEGUNDO PARCIAL 28 DE JUNIO
+jquery
+boostrap
+ts
+map/reduce/filter
+
+CLASE:
+NPM
+npm init
+npm jquery
+npm boostrap
+
+boostrap:
+class= row 
+       align items
+       justify
+       
+
+
