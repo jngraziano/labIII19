@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Practica SP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">   -->
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+
+   
+    <!-- SCRIPTS -->
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <!-- Mis funciones -->
+    <script src="./clases/app.js"></script>
+    <script src="./clases/animal.js"></script>
+    <script src="./clases/perro.js"></script>
+    <script src="./clases/gato.js"></script>
+    <script src="./clases/pajaro.js"></script>
+
+
+    <!-- jquery for typescript -->
+    <!-- Option 1: Install the @types package (Recommended for TS 2.0+)
+
+    In the same folder as your package.json file, run the following command:
+
+    npm install --save-dev @types/jquery -->
+
+
+</head>
+<body style=" background-color: grey;">
+    <!-- NAV -->
+    <nav class="navbar navbar-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+
+        <div class="navbar-header" id="navHeader">
+                <a class="navbar-brand" href="#">Listado de animales</a>
+        </div>
+                                  
+        <button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal" id="addPopup">Agregar animal
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+
+        <button class="btn btn-dark" id="btnPromedio">Promedio Patas
+          
+          </button>
+
+        
+
+        <button class="btn btn-outline-info" id="btnLimpia">Limpiar LS
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+        <!-- <a class="nav-link active" href="#">Opción 2</a> -->
+        <!-- <a class="nav-link" href="#">Opción 3</a> -->
+        <!-- <a class="nav-link" href="#">Opción 4</a> -->
+      </div>
+    </nav>
+    
+  <br>
+
+  
+<div class="container">
+
+    <form id="checkFORM">
+        <div class="col-md-offset-1">
+          <div class="checkbox">
+              
+              <caption><h5>SELECCIONAR COLUMNAS NO VISIBLES:</h5></caption>
+              
+              <label>
+                  <input type="checkbox" class="checkItems" name="nombreF" id="nombreF" value="nombreF">NOMBRE
+              </label>
+  
+              <label>
+                <input type="checkbox" class="checkItems" name="numPatasF" id="numPatasF" value="numPatasF">NUM PATAS
+              </label>
+  
+              <label>
+                  <input type="checkbox" class="checkItems" name="tipoF" id="tipoF" value="tipoF">TIPO
+              </label>
+              <label>
+                <input type="checkbox" class="checkItems" name="sonidoF" id="sonidoF" value="sonidoF">SONIDO</label>
+          </div>
+        </div>
+      </form>        
+      <div class="col-md-offset-1">
+          
+          <label for="Filtro">FILTRAR POR:</label>
+          <select name="filtrarPor" id="filtrarPor">
+              <option value=""></option>
+              <option value="todos"id="optionTodos">TODOS</option>
+              <option value="gato">GATO</option>
+              <option value="perro">PERRO</option>
+              <option value="pajaro">PAJARO</option>
+          </select>
+      </div>
+<br>
+<div id="divTable">
+<table class="table  table-striped table-dark table-bordered table-hover" id="tablaID">
+    <thead>
+      <tr>
+        
+        <th  scope="col" class="col1">NOMBRE</th>
+        <th  scope="col" class="col2">NUM PATAS</th>
+        <th  scope="col" class="col3">TIPO</th>
+        <th  scope="col" class="col4">SONIDO</th>
+        <!-- <th  scope="col">BOTONES</th> -->
+        <!--  <th  scope="col">SEXO</th>
+        <th  scope="col">AVATAR</th> -->
+      </tr>
+    </thead>
+
+
+    <tbody id="tBodyTable">
+     
+    </tbody>
+  </table>
+</div>
+
+
+<!-- DIV OCULTO 1 (agregar) -->
+  <!-- CREO EL MODAL -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content" id="divOculto1">
+
+        <div class="modal-header">
+          <!-- BUTTON X para ocultar el formulario. &times; hace la cruz -->
+          <h5 class="modal-title">Datos animal</h5>
+          <button class="close"  data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- INPUT Nombre -->
+          <div class="form-group">
+            <label for="usr">Nombre:</label><br>
+            <input type="text" id="nombreA" placeholder="Ingrese nombre...">
+          </div>
+
+             <!-- INPUT Sonido -->
+             <div class="form-group">
+                <label for="">Sonido que hace:</label><br>
+                <input type="text" id="sondioA" placeholder="Ingrese expresión...">
+              </div>
+       
+          <!-- INPUT radio TIPO-->
+          <div id="divTipo">
+          <div class="radio">
+          <label id=labelTipo for="txtTipo">Elija tipo:</label><br>
+            <input type="radio" name="radGato" id="radGatoA">Gato<br>
+          </div>
+          <div class="radio">
+            <input type="radio"   name="radPerro" id="radPerroA">Perro<br>
+          </div>
+          <div class="radio">
+            <input type="radio"   name="radPajaro" id="radPajaroA">Pajaro<br>
+          </div>
+
+        </div>
+          <br>
+        
+          
+        </div>
+
+        
+
+        <div class="modal-footer">
+           
+            <button class="btn btn-outline-warning"id="btnModificar">Modificar</button>
+            <button class="btn btn-outline-danger"id="btnEliminar">Eliminar</button>
+          <button class="btn btn-outline-success"id="btnAgregar">Confirmar</button>
+          
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- SPINNER -->
+<div class="spinner" id="spinner" style="display: none">
+    <!-- <img src="./file/45.gif" alt=""> -->
+    <!-- <img class="spinner" src="https://btcspinner.io/img/spinners/default.png" alt=""> -->
+</div>
+
+<div id="divPresentacion" style="visibility:hidden">
+<h1>Listado de Animales</h1><br>
+<p>Bienvenido. Recuerde que puede agregar/modificar/eliminar un animal. <br>
+<!-- Para cambiar su avatar solo haz click en la imagen. -->
+</p>
+</div>
+</div>
+</body>
+</html>

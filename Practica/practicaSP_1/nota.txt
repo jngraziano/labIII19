@@ -1,0 +1,35 @@
+map 
+reduce 
+filter
+
+un formulario tipo popup 
+guardar en un localstorage 
+mostrar todo en una tabla con map reduce y filter
+typescript
+
+
+
+clase animal con nombre
+
+una funcion que era hacer ruido
+
+clase perro y gato hijas
+
+que hacian guau y miau
+
+objeto.typeoff
+
+
+recordar map reduce filter del año pasado. que cuando hagas un click borre una columna
+
+
+recuperatorio es similar al primer parcial. agregando jquery, no entra bootstrap hay que hacerlo con css
+
+
+un boton arriba de la tabla y que ese recupere el array que aplique un filter y muestre de nuevo la grilla
+
+map: cuatro columnas y con el check voy mostrando solo las columnas tildadas
+
+reduce: un boton y un imput text calcular promedio/cantidad
+
+armar una funcion que se llame toJSON en animal
