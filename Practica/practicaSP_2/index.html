@@ -36,18 +36,19 @@
         <div class="container-fluid">
 
         <div class="navbar-header" id="navHeader">
-                <a class="navbar-brand" href="#">Listado de personas</a>
+                <a class="navbar-brand" href="#" id="ListadoRefresh">Listado de personas</a>
         </div>
                                   
         <button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal" id="addPopup">Agregar persona
           <i class="glyphicon glyphicon-plus"></i>
         </button>
 
-        <button class="btn btn-dark" id="btnPromedio">Promedio Edad
+        <button class="btn btn-dark" data-toggle="modal" data-target="#promedioModal" id="btnPromedio">Promedio Edad
           
           </button>
 
-        
+            <button class="btn btn-outline-primary"id="btnNombApe">Mostrar NombreApellido</button>
+         
 
         <button class="btn btn-outline-info" id="btnLimpia">Limpiar LS
           <i class="glyphicon glyphicon-plus"></i>
@@ -63,7 +64,7 @@
   
 <div class="container">
 
-    <form id="checkFORM">
+    <!-- <form id="checkFORM">
         <div class="col-md-offset-1">
           <div class="checkbox">
               
@@ -84,15 +85,18 @@
                 <input type="checkbox" class="checkItems" name="sexoF" id="sexoF" value="sexoF">SEXO</label>
           </div>
         </div>
-      </form>        
+      </form>         -->
+    
+
+
       <div class="col-md-offset-1">
           
           <label for="Filtro">FILTRAR POR:</label>
-          <select name="filtrarPor" id="filtrarPor">
+          <select name="filtrarPor" id="filtrarPor" class="selectEstado">
               <option value=""></option>
               <option value="todos"id="optionTodos">TODOS</option>
-              <option value="hombre">MASCULINO</option>
-              <option value="mujer">FEMENINO</option>
+              <option value="MASCULINO">MASCULINO</option>
+              <option value="FEMENINO">FEMENINO</option>
              
           </select>
       </div>
@@ -122,6 +126,21 @@
     </tbody>
   </table>
 </div>
+
+<div class="modal fade" id="promedioModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content" id="divPromedio">
+        <div class="modal-header">
+            <h5 class="modal-title">Promedio</h5>
+            <button class="close"  data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+
+            <label id="promedioText"></label>
+        </div>
+    </div>
+      </div>
+      </div>
 
 
 <!-- DIV OCULTO 1 (agregar) -->

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Segundo Parcial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">   -->
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/estilos.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css" />
+    <script src="./js/jquery-3.3.1.min.js"></script>
+
+
+    <!-- SCRIPTS -->
+    <script src="./js/bootstrap.js"></script>
+
+    
+    <!-- Mis funciones -->
+    <script src="./clases/Vehiculo.js"></script>
+    <script src="./clases/Camioneta.js"></script>
+    <script src="./clases/Auto.js"></script>
+    <script src="./clases/app.js"></script>
+
+   
+  
+
+
+
+
+</head>
+<body style=" background-color: grey;">
+    <!-- NAV -->
+    <nav class="navbar navbar-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+
+        <div class="navbar-header" id="navHeader">
+                <a class="navbar-brand" href="#" id="ListadoRefresh">Listado de vehiculos</a>
+        </div>
+                                  
+        <button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal" id="addPopup">Agregar vehiculo
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+
+        <button class="btn btn-dark" data-toggle="modal" data-target="#promedioModal" id="btnPromedio">Promedio Precio
+          
+          </button>
+
+            <button class="btn btn-outline-primary"id="btnNombApe">Mostrar Marca/Modelo</button>
+         
+
+        <button class="btn btn-outline-info" id="btnLimpia">Limpiar LS
+          <i class="glyphicon glyphicon-plus"></i>
+        </button>
+        <!-- <a class="nav-link active" href="#">Opción 2</a> -->
+        <!-- <a class="nav-link" href="#">Opción 3</a> -->
+        <!-- <a class="nav-link" href="#">Opción 4</a> -->
+      </div>
+    </nav>
+    
+  <br>
+
+  
+<div class="container">
+
+    <!-- <form id="checkFORM">
+        <div class="col-md-offset-1">
+          <div class="checkbox">
+              
+              <caption><h5>SELECCIONAR COLUMNAS NO VISIBLES:</h5></caption>
+              
+              <label>
+                  <input type="checkbox" class="checkItems" name="nombreF" id="nombreF" value="nombreF">NOMBRE
+              </label>
+  
+              <label>
+                <input type="checkbox" class="checkItems" name="apellidoF" id="apellidoF" value="apellidoF">APELLIDO
+              </label>
+  
+              <label>
+                  <input type="checkbox" class="checkItems" name="edadF" id="edadF" value="edadF">EDAD
+              </label>
+              <label>
+                <input type="checkbox" class="checkItems" name="sexoF" id="sexoF" value="sexoF">SEXO</label>
+          </div>
+        </div>
+      </form>         -->
+    
+
+
+      <div class="col-md-offset-1">
+          
+          <label for="Filtro">FILTRAR POR:</label>
+          <select name="filtrarPor" id="filtrarPor" class="selectEstado">
+              <option value=""></option>
+              <option value="todos"id="optionTodos">TODOS</option>
+              <option value="AUTO">AUTO</option>
+              <option value="CAMIONETA">CAMIONETA</option>
+             
+          </select>
+      </div>
+
+
+<br>
+<div id="divTable">
+<table class="table  table-striped table-dark table-bordered table-hover" id="tablaID">
+    <thead>
+      <tr>
+        
+        <th  scope="col" class="col1">ID</th>
+        <th  scope="col" class="col2">MARCA</th>
+        <th  scope="col" class="col3">MODELO</th>
+        <th  scope="col" class="col4">PRECIO</th>
+        <th  scope="col" class="col4">TIPO</th>
+        <th  scope="col" class="col5">ACCION</th>
+
+        <!-- <th  scope="col">BOTONES</th> -->
+        <!--  <th  scope="col">SEXO</th>
+        <th  scope="col">AVATAR</th> -->
+      </tr>
+    </thead>
+
+
+    <tbody id="tBodyTable">
+     
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="promedioModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content" id="divPromedio">
+        <div class="modal-header">
+            <h5 class="modal-title">Promedio Precio</h5>
+            <button class="close"  data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+
+            <label id="promedioText"></label>
+        </div>
+    </div>
+      </div>
+      </div>
+
+
+<!-- DIV OCULTO 1 (agregar) -->
+  <!-- CREO EL MODAL -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content" id="divOculto1">
+
+        <div class="modal-header">
+          <!-- BUTTON X para ocultar el formulario. &times; hace la cruz -->
+          <h5 class="modal-title">Datos del vehiculo</h5>
+          <button class="close"  data-dismiss="modal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- INPUT Nombre -->
+          <div class="form-group">
+              <label for="usr">ID:</label><br>
+              <input type="text" id="idA" disabled>
+            </div>
+          <!-- INPUT Nombre -->
+          <div class="form-group">
+            <label for="usr">Marca:</label><br>
+            <input type="text" id="marcaA" placeholder="Ingrese marca...">
+          </div>
+
+             <!-- INPUT Apellido -->
+             <div class="form-group">
+                <label for="">Modelo:</label><br>
+                <input type="text" id="modeloA" placeholder="Ingrese modelo...">
+              </div>
+
+                <!-- INPUT Edad -->
+             <div class="form-group">
+              <label for="">Precio:</label><br>
+              <input type="number" id="precioA" placeholder="Ingrese precio...">
+            </div>
+
+       
+          <!-- INPUT radio TIPO-->
+          <div id="divSexo">
+          <label for="labelSexo">TIPO:</label>
+          <select name="selectSexo" id="selectSexo"  class="selectTipoA">
+              <option value="" class="selectedBox" selected></option>
+              <option value="CAMIONETA" class="selectedBox">Camioneta</option>
+              <option value="AUTO" class="selectedBox">Auto</option>
+          
+          </select>
+         </div>
+
+         <div id=inputPuertas class="form-group" >
+          <label for="">Cant Puertas:</label><br>
+          <input type="number" id="puertasA" placeholder="Ingrese cant Puertas...">
+        </div>
+
+        <div id="inputCuatro" class="form-group ">
+          <label for="">4x4:</label><br>
+          <input type="text" id="cuatroA" placeholder="Es 4x4? (SI/NO)...">
+        </div>
+
+          <br>
+        
+          
+        </div>
+
+        
+
+        <div class="modal-footer">
+           
+            <button class="btn btn-outline-warning"id="btnModificar">Modificar</button>
+            <button class="btn btn-outline-danger"id="btnEliminar">Eliminar</button>
+          <button class="btn btn-outline-success"id="btnAgregar">Confirmar</button>
+          
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- SPINNER -->
+<div class="spinner" id="spinner" style="display: none">
+    <!-- <img src="./file/45.gif" alt=""> -->
+    <!-- <img class="spinner" src="https://btcspinner.io/img/spinners/default.png" alt=""> -->
+</div>
+
+<div id="divPresentacion" style="visibility:hidden">
+<h1>Listado de Personas</h1><br>
+<p>Bienvenido. Recuerde que puede agregar/modificar/eliminar una persona. <br>
+<!-- Para cambiar su avatar solo haz click en la imagen. -->
+</p>
+</div>
+</div>
+</body>
+</html>

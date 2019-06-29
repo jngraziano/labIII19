@@ -9,6 +9,9 @@ var segundoParcial;
 (function (segundoParcial) {
     $(document).ready(function () {
         var usuarioID = 0;
+        $("#ListadoRefresh").click(function () {
+            location.reload();
+        });
         $("#addPopup").click(function () {
             $("#btnModificar").css("visibility", "hidden");
             $("#btnEliminar").css("visibility", "hidden");
@@ -38,30 +41,57 @@ var segundoParcial;
             $("#radPerroA").prop("checked", false);
         });
         $("#checkFORM :checkbox").on("click", function () {
-            // var checkboxON = $('input:checkbox:checked.checkItems').map(function() { return this.value; }).get();
+            // var checkboxON = $('input:checkbox:checked.checkItems').map(function(x) { return x == "nombreF"; }).get();
+            // let checkboxON: any = $('input:checkbox:checked.checkItems').val();
+            // console.log(checkboxON);
             // if(checkboxON.length == 0)         {  location.reload();}
-            // checkboxON.includes("nombreF")       == true ? $(".col1").css("display","none"):null;
-            // checkboxON.includes("apellidoF")       == true ? $(".col2").css("display","none"):null;
+            // if(checkboxON == "nombreF")
+            // {
+            //     $(".col1").css("display","none");                
+            //     $(".col3").css("display","none");
+            //     $(".col4").css("display","none");
+            // }
+            // checkboxON.includes("nombreF")       == true ? $(".col2").css("display","none"):null;
+            // checkboxON.includes("apellidoF")       == true ? $(".col3").css("display","none"):null;
             // checkboxON.includes("edadF")       == true ? $(".col3").css("display","none"):null;
             // checkboxON.includes("sexoF")       == true ? $(".col4").css("display","none"):null;
         });
-        $("#btnPrmedio").click(function () {
-            // var acumEdad = usuarios
-            // .reduce(function(actual,siguiente){
-            //     return actual+siguiente.edad;
-            // },0); //Inicializa y arranca en 0 porque es un numero lo que devuelve y no un objeto
-            //En la primer iteracion, actual toma 0 como valor
-            // var cantidad = usuarios
-            // .reduce (function(actual,siguiente){
-            //     return actual + 1;
-            // }, 0);
-            // return (acumEdad / cantidad).toFixed(2);
+        $("#btnNombApe").click(function () {
+            mostrarNombApe();
         });
-        // $("#filtrarPor").change(function(){
-        // let valorFiltro = $('#filtrarPor').map(function() { return this.value; }).get();
-        // mostrarPersonas(valorFiltro);
-        // // tablaAux = undefined;
-        // });
+        $("#btnPromedio").click(function () {
+            var personasStorage = JSON.parse(localStorage.getItem("Localpersona") || "[]");
+            var acumulador;
+            // console.log(personasStorage);
+            var arr = [0];
+            for (var index = 0; index < personasStorage.length; index++) {
+                var personaprueba = JSON.parse(personasStorage[index]);
+                // console.log(personaprueba);
+                if (personaprueba.edad != 0) {
+                    arr.push(personaprueba.edad);
+                }
+            }
+            console.log(arr);
+            // sum all the elements of the array
+            var sum = arr.reduce(function (accumulator, currentValue) {
+                return accumulator + currentValue;
+            });
+            console.log(sum);
+            var divido = arr.length - 1;
+            var average = sum / divido;
+            average = Math.round(average * 100) / 100;
+            $("#promedioText").html(average.toString());
+        });
+        $("select.selectEstado").change(function () {
+            // var targetInput = event.target;
+            // var idSeleccionado = $(this).parent().siblings(":first").text();
+            var selectedEstado = $(this).children("option:selected").val();
+            mostrarPersonas(selectedEstado);
+            // alert("perrote");
+            // let valorFiltro = $('#filtrarPor').map(function() { return this.value; }).get();
+            // let valorSeleccionado = $("#filtrarPor").value;
+            // tablaAux = undefined;
+        });
         $("#tablaID tbody tr").dblclick(function (e) {
             //    $('#myModal').modal('show');
             $("#btnModificar").css("visibility", "visible");
@@ -122,13 +152,15 @@ var segundoParcial;
         if (valor) {
             //MUESTRO EL LISTADO DE EmpleadoS SEGUN FILTRO
             var stringFinal = personasStorage
-                .filter(function (animal) {
-                var animalRet = JSON.parse(animal);
-                return animalRet.tipo == valor;
+                .filter(function (persona) {
+                var personaRet = JSON.parse(persona);
+                // console.log(personaRet.sexo);
+                // console.log(valor);
+                return personaRet.sexo === valor;
             })
-                .map(function (animal) {
-                var animalRet = JSON.parse(animal);
-                return animalRet;
+                .map(function (persona) {
+                var personaRet = JSON.parse(persona);
+                return personaRet;
             });
             personasStorage = stringFinal;
         }
@@ -149,6 +181,36 @@ var segundoParcial;
                 "<td class='col2'>" + personaActual.apellido + "</td>" +
                 "<td class='col3'>" + personaActual.edad + "</td>" +
                 "<td class='col4'>" + personaActual.sexo + "</td>" +
+                "</tr>";
+            tBodyTable.innerHTML = seccionPersonas;
+        }
+    }
+    function mostrarNombApe() {
+        var personasStorage = JSON.parse(localStorage.getItem("Localpersona") || "[]");
+        var tBodyTable = $('#tBodyTable')[0];
+        var seccionPersonas = "";
+        $(".col1").css("display", "none");
+        $(".col4").css("display", "none");
+        $(".col5").css("display", "none");
+        for (var i = 0; i < personasStorage.length; i++) {
+            // let personaActual;
+            // if(valor)
+            // {personaActual = personasStorage[i];}
+            // else     {personaActual = JSON.parse(personasStorage[i]);}
+            // let personaActual[] = ;
+            console.log(JSON.parse(personasStorage[i]));
+            var personaActual = JSON.parse(personasStorage[i]);
+            // let prueba = personaActual.map(function(x){
+            //     return x;
+            // });
+            // let personaActualApellido = personasStorage[i].apellido;
+            // console.log( prueba);
+            // <td>"+ personaActual.ID   + "</td>" + 
+            seccionPersonas += "<tr> " +
+                "<td class='col1'>" + personaActual.nombre + "</td>" +
+                "<td class='col2'>" + personaActual.apellido + "</td>" +
+                //   "<td class='col3'>" +      personaActual.edad  + "</td>" +
+                //   "<td class='col4'>" +      personaActual.sexo  + "</td>" +
                 "</tr>";
             tBodyTable.innerHTML = seccionPersonas;
         }
